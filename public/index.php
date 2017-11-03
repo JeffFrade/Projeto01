@@ -20,34 +20,47 @@
 <header>
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                <a href="index.php" class="navbar-brand">Minha Loja</a>
+                    <a href="index.php" class="navbar-brand">Minha Loja</a>
+                </div>
+
+                <div id="navbarCollapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="index.php"> <i class="fa fa-fw fa-home"></i> Home</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Produtos <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-fw fa-users"></i> Contato</a></li>
+                        <li><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                        <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-default">3</span></a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div id="navbarCollapse" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.php"> <i class="fa fa-fw fa-home"></i> Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Produtos <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="fa fa-fw fa-users"></i> Contato</a></li>
-                    <li><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                    <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-default">3</span></a></li>
-                </ul>
+            <div class="row">
+                <form class="navbar-form navbar-left" id="frmFiltro" name="frmFiltro" method="get" action="">
+                    <div class="input-group input-menu">
+                        <input type="text" id="txtBuscar" name="txtBuscar" placeholder="Buscar" class="form-control">
+                        <span class="input-group-btn">
+                            <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </nav>
@@ -110,6 +123,7 @@
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
                             <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
                         </div>
                     </div>
 
@@ -118,6 +132,7 @@
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
                             <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
                         </div>
                     </div>
                 </div>
@@ -128,6 +143,7 @@
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
                             <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
                         </div>
                     </div>
 
@@ -136,6 +152,7 @@
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
                             <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
                         </div>
                     </div>
                 </div>
