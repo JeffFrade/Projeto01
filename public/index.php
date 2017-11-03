@@ -105,7 +105,19 @@
                 <h2 class="text-left">Vitrine</h2>
                 <hr/>
                 <div class="col-xs-6 col-md-3">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" data-lightbox="Notebook 1"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="text-center img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
+                </div>
 
+                <div class="col-xs-6 col-md-3">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" data-lightbox="Notebook 2"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="text-center img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" data-lightbox="Notebook 3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="text-center img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
+                </div>
+
+                <div class="col-xs-6 col-md-3">
+                    <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" data-lightbox="Notebook 4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="text-center img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
                 </div>
             </div>
         </div>
@@ -113,50 +125,18 @@
 </main>
 
 <footer>
-
+    <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
 </footer>
 
-<!--Modal-->
-<div class="modal fade" id="login" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-user"></i> Efetue Login</h4>
-            </div>
-            <div class="modal-body">
-                <form id="frmLogin" name="" method="post" action="">
-                    <div class="form-group">
-                        <label for="txtEmail">E-mail:</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                            <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="txtSenha">Senha:</label>
-                        <div class="input-group">
-                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                            <input type="password" id="txtSenha" name="txtSenha" class="form-control" placeholder="Senha">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <a href="#">Esqueci Minha Senha</a><br/>
-                    </div>
-
-                    <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Login</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!--Fim Modal-->
+<?php
+    require_once 'pages/modal.php';
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/lightbox.min.js"></script>
+<script src="js/vue.min.js"></script>
+<script src="js/app.min.js"></script>
+<!--<script src="js/script.min.js"></script>-->
 </body>
 </html>
