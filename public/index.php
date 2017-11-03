@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Site</title>
+    <title>Loja</title>
+    <link href="img/icon.ico" rel="shortcut icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/lightbox.min.css" rel="stylesheet">
@@ -27,14 +28,25 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a href="index.php" class="navbar-brand">Site 01</a>
+                <a href="index.php" class="navbar-brand">Minha Loja</a>
             </div>
 
             <div id="navbarCollapse" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html"> <i class="fa fa-fw fa-home"></i> Home</a></li>
-                    <li><a href="pages/produtos.html"><i class="fa fa-fw fa-shopping-cart"></i> Produtos</a></li>
+                    <li class="active"><a href="index.php"> <i class="fa fa-fw fa-home"></i> Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Produtos <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#"><i class="fa fa-fw fa-users"></i> Contato</a></li>
+                    <li><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                    <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-default">3</span></a></li>
                 </ul>
             </div>
         </div>
@@ -87,12 +99,61 @@
                 </div>
             </div>
         </div>
+
+        <div class="container">
+            <div class="row">
+                <h2 class="text-left">Vitrine</h2>
+                <hr/>
+                <div class="col-xs-6 col-md-3">
+
+                </div>
+            </div>
+        </div>
     </section>
 </main>
 
 <footer>
 
 </footer>
+
+<!--Modal-->
+<div class="modal fade" id="login" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-user"></i> Efetue Login</h4>
+            </div>
+            <div class="modal-body">
+                <form id="frmLogin" name="" method="post" action="">
+                    <div class="form-group">
+                        <label for="txtEmail">E-mail:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                            <input type="email" id="txtEmail" name="txtEmail" class="form-control" placeholder="E-mail">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSenha">Senha:</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                            <input type="password" id="txtSenha" name="txtSenha" class="form-control" placeholder="Senha">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <a href="#">Esqueci Minha Senha</a><br/>
+                    </div>
+
+                    <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Login</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fim Modal-->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
