@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Minha Loja (Estudo)">
+    <meta name="keywords" content="PHP,HTML,CSS,SASS,LESS,JavaScript,SQL,Bootstrap,Vue,Chart,Gulp">
+    <meta name="author" content="Jefferson Frade">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Loja</title>
