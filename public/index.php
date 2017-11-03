@@ -164,7 +164,7 @@
                 <div class="row">
                     <nav class="text-center">
                         <ul class="pagination">
-                            <li>
+                            <li class="disabled">
                                 <a href="#" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
@@ -205,6 +205,10 @@
     </div>
 
     <div class="footer2">
+        <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
+    </div>
+
+    <div class="footer3">
         <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
     </div>
 </footer>
