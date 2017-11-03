@@ -7,7 +7,7 @@
     <meta name="author" content="Jefferson Frade">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Loja</title>
+    <title>Minha Loja</title>
     <link href="img/icon.ico" rel="shortcut icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -119,15 +119,15 @@
 
         <div class="container">
             <div class="col-md-8">
-                <h2 class="text-left">Vitrine</h2>
+                <h2 class="text-left">Vitrine <small>Aproveite Estas Ofertas!!!</small></h2>
                 <hr/>
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="well">
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                            <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
+                            <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
                         </div>
                     </div>
 
@@ -135,8 +135,8 @@
                         <div class="well">
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                            <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
+                            <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
                         </div>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                         <div class="well">
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                            <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
+                            <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
                         </div>
                     </div>
 
@@ -155,8 +155,8 @@
                         <div class="well">
                             <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
                             <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                            <strong>Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                            <a href="#" role="button" class="btn btn-primary btn-block">Clique Para Ver Detalhes</a>
+                            <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
+                            <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
                         </div>
                     </div>
                 </div>
@@ -166,10 +166,10 @@
                 <h2>Novidades</h2>
                 <hr/>
                 <div class="well">
-                    <h3 class="text-center">Lorem ipsum</h3>
+                    <h3 class="text-center"><i class="fa fa-shopping-cart"></i> Lorem ipsum</h3>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <br/>
-                    <h3 class="text-center">Lorem ipsum</h3>
+                    <h3 class="text-center"><i class="fa fa-shopping-cart"></i> Lorem ipsum</h3>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
