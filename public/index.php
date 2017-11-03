@@ -21,6 +21,7 @@
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="row">
+            <div class="col-sm-2">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
@@ -31,8 +32,19 @@
 
                     <a href="index.php" class="navbar-brand">Minha Loja</a>
                 </div>
+            </div>
 
+            <div class="col-sm-10">
                 <div id="navbarCollapse" class="navbar-collapse collapse">
+                    <form class="navbar-form navbar-left" id="frmFiltro" name="frmFiltro" method="get" action="">
+                        <div class="input-group input-menu">
+                            <input type="text" id="txtBuscar" name="txtBuscar" placeholder="Buscar" class="form-control">
+                            <span class="input-group-btn">
+                            <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                        </div>
+                    </form>
+
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="index.php"> <i class="fa fa-fw fa-home"></i> Home</a></li>
                         <li class="dropdown">
@@ -50,17 +62,6 @@
                         <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-default">3</span></a></li>
                     </ul>
                 </div>
-            </div>
-
-            <div class="row">
-                <form class="navbar-form navbar-left" id="frmFiltro" name="frmFiltro" method="get" action="">
-                    <div class="input-group input-menu">
-                        <input type="text" id="txtBuscar" name="txtBuscar" placeholder="Buscar" class="form-control">
-                        <span class="input-group-btn">
-                            <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                        </span>
-                    </div>
-                </form>
             </div>
         </div>
     </nav>
