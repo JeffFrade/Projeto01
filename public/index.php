@@ -40,8 +40,8 @@
                         <div class="input-group input-menu">
                             <input type="text" id="txtBuscar" name="txtBuscar" placeholder="Buscar" class="form-control">
                             <span class="input-group-btn">
-                            <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                        </span>
+                                <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                            </span>
                         </div>
                     </form>
 
