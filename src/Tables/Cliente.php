@@ -4,7 +4,7 @@ namespace Classes\Tables;
 
 class Cliente implements ClienteInterface
 {
-    //Está Classe Possui Somente Getters e Setters
+    //Esta Classe Possui Somente Getters e Setters
     private $cpf;
     private $nome;
     private $dataNasc;

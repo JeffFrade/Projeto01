@@ -119,7 +119,7 @@
 
         <div class="container">
             <div class="col-md-8">
-                <h2 class="text-left">Vitrine <small>Aproveite Estas Ofertas!!!</small></h2>
+                <h2 class="text-left">Vitrine</h2>
                 <hr/>
                 <div class="row">
                     <div class="col-sm-6">

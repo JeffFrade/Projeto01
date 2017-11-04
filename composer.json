@@ -11,8 +11,8 @@
     ],
     "require": {},
     "autoload": {
-    	"psr4": {
-	    "Classes\\": "src"
-	}
+    	"psr-4": {
+	        "Classes\\": "src/"
+	    }
     }
 }
