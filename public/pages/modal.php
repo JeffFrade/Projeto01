@@ -30,6 +30,17 @@
 
                     <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Login</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+
+                    <div class="message">
+                        <?php
+                            if (isset($_POST['btnLogin'])) {
+                                $cliente->setEmail($_POST['txtEmail']);
+                                $cliente->setSenha($_POST['txtSenha']);
+
+                                echo $sCliente->login();
+                            }
+                        ?>
+                    </div>
                 </form>
             </div>
         </div>
