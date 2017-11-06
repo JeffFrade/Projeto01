@@ -10,4 +10,6 @@ interface TagsInterface
     public static function alertDismissible($classes = [], $content = "");
     //Montagem de Scripts JavaScript (Simples):
     public static function scriptSimple($type = "", $script);
+    //Montagem do Paginador:
+    public static function pagination($arr = [], $page);
 }

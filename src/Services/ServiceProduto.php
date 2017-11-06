@@ -3,6 +3,7 @@
 namespace Classes\Services;
 
 use Classes\Tables\ProdutoInterface;
+use Classes\Util\Tags;
 
 class ServiceProduto implements ServiceProdutoInterface
 {
@@ -25,49 +26,11 @@ class ServiceProduto implements ServiceProdutoInterface
     {
         //Tratamento de Erros:
         try {
-            ##### PAGINADOR #####
+            //Array com os Valores do Paginador:
+            $arr = $this->paginador($field, $value);
 
             //Query SQL:
-            $sql = "SELECT COUNT(cod) FROM produtos WHERE {$field} = :{$field}";
-
-            //Criando o Statment:
-            $stmt = $this->db->prepare($sql);
-
-            //Adicionando as Variáveis:
-            $stmt->bindValue(':'.$field, $value);
-
-            //Executando o Statment:
-            $stmt->execute();
-
-            //Jogando o Dado num Array Associativo:
-            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
-
-            //Total de Registros Por Página:
-            $reg = 4;
-
-
-            //Número de Páginas:
-            $numPags = ceil($dados['COUNT(cod)']/$reg);
-
-            //Verificando em Qual Página Está:
-            if (isset($_GET['pag'])) {
-                $pagina = $_GET['pag'];
-            } else {
-                $pagina = 1;
-            }
-
-            //Próxima Página:
-            $proxima = $pagina +1;
-            //Página Anterior
-            $anterior = $pagina -1;
-
-            $inicio = ($reg * $pagina) - $reg;
-
-            ##### FIM DO PAGINADOR #####
-
-
-            //Query SQL:
-            $sql = "SELECT cod, item, preco, imagem FROM produtos WHERE vitrine = 'S' LIMIT {$inicio}, {$reg}";
+            $sql = "SELECT cod, item, preco, imagem FROM produtos WHERE vitrine = 'S' LIMIT {$arr['inicio']}, {$arr['reg']}";
 
             //Criando o Statment:
             $stmt = $this->db->prepare($sql);
@@ -126,49 +89,65 @@ class ServiceProduto implements ServiceProdutoInterface
             $vitrine.= '</div>'.PHP_EOL;
             $vitrine.= "\n";
 
-            ##### PAGINADOR #####
-
-            //Cria Linha (row):
-            $paginador = '<div class="row">'.PHP_EOL;
-
-            //Centraliza a <nav>:
-            $paginador.= '<nav class="text-center">'.PHP_EOL;
-
-            //Cria o Paginador:
-            $paginador.= '<ul class="pagination">'.PHP_EOL;
-
-            //Botão de Anterior:
-            $paginador.= '<li class="'.($pagina <= 1?"disabled":"").'">'.PHP_EOL;
-            $paginador.= '<a href="'.$page.'?pag='.$anterior.'" aria-label="Previous" class="'.($pagina <= 1?"disabled":"").'>'.PHP_EOL;
-            $paginador.= '<span aria-hidden="true">&laquo;</span>'.PHP_EOL;
-            $paginador.= '</a>'.PHP_EOL;
-            $paginador.= '</li>'.PHP_EOL;
-
-            //Loop do Paginador:
-            for ($i = 1; $i <= $numPags; $i++) {
-                $paginador.= '<li class="'.($pagina == $i?"active":"").'"><a href="'.$page.'?pag='.$i.'" >'.$i.'</a></li>'.PHP_EOL;
-            }
-
-            //Botão de Próximo:
-            $paginador.= '<li class="'.($pagina >= $numPags?"disabled":"").'">'.PHP_EOL;
-            $paginador.= '<a href="'.$page.'?pag='.$proxima.'" aria-label="Next" '.($pagina >= $numPags?"disabled":"").'>'.PHP_EOL;
-            $paginador.= '<span aria-hidden="true">&raquo;</span>'.PHP_EOL;
-            $paginador.= '</a>'.PHP_EOL;
-            $paginador.= '</li>'.PHP_EOL;
-
-            //Finaliza o Paginador:
-            $paginador.= '</ul>'.PHP_EOL;
-
-            //Finaliza a <nav>:
-            $paginador.= '</nav>'.PHP_EOL;
-
-            //Finaliza a Linha (row):
-            $paginador.= '</div>'.PHP_EOL;
+            //Monta o Paginador:
+            $paginador = Tags::pagination($arr, $page);
 
             $vitrine.= $paginador;
 
             //Retorno:
             return $vitrine;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
+    //Método do Paginador:
+    private function paginador($field, $value)
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT COUNT(cod) FROM produtos WHERE {$field} = :{$field}";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando as Variáveis:
+            $stmt->bindValue(':'.$field, $value);
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            //Jogando o Dado num Array Associativo:
+            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            //Total de Registros Por Página:
+            $reg = 4;
+
+
+            //Número de Páginas:
+            $numPags = ceil($dados['COUNT(cod)']/$reg);
+
+            //Verificando em Qual Página Está:
+            if (isset($_GET['pag'])) {
+                $pagina = $_GET['pag'];
+            } else {
+                $pagina = 1;
+            }
+
+            //Próxima Página:
+            $proxima = $pagina +1;
+            //Página Anterior
+            $anterior = $pagina -1;
+
+            $inicio = ($reg * $pagina) - $reg;
+
+            //Array de Retorno:
+            $ret = array('inicio' => $inicio, 'reg' => $reg, 'pagina' => $pagina, 'numPags' => $numPags, 'anterior' => $anterior, 'proxima' => $pagina);
+
+            //Retorno:
+            return $ret;
         } catch (\PDOException $ex) {
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();
