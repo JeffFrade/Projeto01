@@ -114,6 +114,7 @@
                         //Div da Direita:
                         require_once 'pages/direita.php'
                     ?>
+                </div>
             </section>
         </main>
 
