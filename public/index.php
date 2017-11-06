@@ -4,7 +4,9 @@
 
     //Utilização de Classes em Namespaces:
     use Classes\Tables\Cliente;
+    use Classes\Tables\Produto;
     use Classes\Services\ServiceCliente;
+    use Classes\Services\ServiceProduto;
 
     //Iniciando a Sessão (Caso Não Exista):
     if (!isset($_SESSION)) {
@@ -17,8 +19,14 @@
     //Classe de Cliente:
     $cliente = new Cliente;
 
+    //Classe de Produto:
+    $produto = new Produto;
+
     //Serviço de Cliente:
     $sCliente = new ServiceCliente($db, $cliente);
+
+    //Serviço de Produto:
+    $sProduto = new ServiceProduto($db, $produto);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -99,7 +107,7 @@
                     <div class="col-md-8">
                         <h2 class="text-left">Vitrine</h2>
                         <hr/>
-                        <div class="row">
+                        <!--<div class="row">
                             <div class="col-sm-6">
                                 <div class="well">
                                     <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
@@ -137,7 +145,8 @@
                                     <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
+                        <?= $sProduto->selectVitrine(); ?>
 
                         <div class="row">
                             <nav class="text-center">

@@ -4,7 +4,7 @@ namespace Classes\Services;
 
 use Classes\Tables\CategoriaInterface;
 
-class ServiceCategoria
+class ServiceCategoria implements ServiceCategoriaInterface
 {
     //Atributos:
     private $db;

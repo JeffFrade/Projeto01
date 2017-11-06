@@ -2,8 +2,6 @@
 
 namespace Classes\Util;
 
-use Classes\Util\Tags;
-
 class Validator implements ValidatorInterface
 {
     //Método de Validação Simples:
