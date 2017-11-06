@@ -107,68 +107,7 @@
                     <div class="col-md-8">
                         <h2 class="text-left">Vitrine</h2>
                         <hr/>
-                        <!--<div class="row">
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
-                                    <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                                    <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                                    <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
-                                    <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                                    <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                                    <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
-                                    <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                                    <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                                    <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="well">
-                                    <h4 class="text-center">Notebook Lenovo 19 Polegadas</h4>
-                                    <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Ydot19n2GU1IyqSWkoQEmyjLS-5G0t_jf4t6Iqs7A-9KIwhA" class="img-circle img-responsive img-vitrine" title="Notebook Lenovo 19 Polegadas" alt="Notebook Lenovo 19 Polegadas"/></a>
-                                    <strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ 1.800,99</span></strong>
-                                    <a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>
-                                </div>
-                            </div>
-                        </div>-->
-                        <?= $sProduto->selectVitrine(); ?>
-
-                        <div class="row">
-                            <nav class="text-center">
-                                <ul class="pagination">
-                                    <li class="disabled">
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li>
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+                        <?= $sProduto->selectVitrine('vitrine', 'S', 'index.php'); ?>
                     </div>
 
                     <?php
