@@ -30,6 +30,64 @@ class ServiceCliente implements ServiceClienteInterface
 
             //Criando o Statment:
             $stmt = $this->db->prepare($sql);
+
+            $err = 0;
+
+            //Validações:
+            $err.= Validator::validate($this->cliente->getNome(), "", "Preencha o Campo Nome Corretamente", 1);
+            $err.= Validator::validateRegex($this->cliente->getEmail(), '/^[\w.]+@[\w]+[\.][\w]{2,3}/', "Preencha o Campo E-mail Corretamente", 2);
+            $err.= Validator::validate($this->cliente->getDataNasc(), "", "Preencha o Campo Data de Nascimento Corretamente", 1);
+            $err.= Validator::validateRegex($this->cliente->getCpf(), "/^[\d]{3}\.[\d]{3}\.[\d]{3}\-[\d]{2}/", "Preencha o CPF Corretamente", 2);
+            if (empty($this->cliente->getTelefone())) {
+                $this->cliente->setTelefone("-");
+            }
+
+            $err.= Validator::validateRegex($this->cliente->getCelular(), '/^\([\d]{2}\)[\d]{4,5}\-[\d]{4}/', "Preecnha o Campo Celular Corretamente", 2);
+            $err.= Validator::validateRegex($this->cliente->getCep(), '/^[\d]{8}/', "Preecnha o Campo Cep Corretamente", 2);
+            $err.= Validator::validate($this->cliente->getEndereco(), "", "Preencha o Campo Endereço Corretamente", 1);
+            $err.= Validator::validate($this->cliente->getBairro(), "", "Preencha o Campo Bairro Corretamente", 1);
+            $err.= Validator::validate($this->cliente->getNumero(), "", "Preencha o Campo Número Corretamente", 1);
+            if (empty($this->cliente->getComplemento())) {
+                $this->cliente->setComplemento("-");
+            }
+            $err.= Validator::validateRegex($this->cliente->getSenha(), '/^[\w\d\ W]{8,20}/', "Senha Menor que 8 Digitos ou Superior a 20 ou Não Contém Letras e Números", 2);
+
+            //Verificando se há Erros:
+            if ($err != 0) {
+                //Caso Haja:
+                return false;
+            }
+
+            //Criando o Md5 da Senha:
+            $this->cliente->setMd5Senha($this->cliente->getSenha());
+
+            //Adicionando os Parâmetros:
+            $stmt->bindValue(':cpf', $this->cliente->getCpf());
+            $stmt->bindValue(':nome', $this->cliente->getNome());
+            $stmt->bindValue(':dataNasc', $this->cliente->getDataNasc());
+            $stmt->bindValue(':email', $this->cliente->getEmail());
+            $stmt->bindValue(':telefone', $this->cliente->getTelefone());
+            $stmt->bindValue(':celular', $this->cliente->getCelular());
+            $stmt->bindValue(':cep', $this->cliente->getCep());
+            $stmt->bindValue(':endereco', $this->cliente->getEndereco());
+            $stmt->bindValue(':cidade', $this->cliente->getCidade());
+            $stmt->bindValue(':estado', $this->cliente->getEstado());
+            $stmt->bindValue(':numero', $this->cliente->getNumero());
+            $stmt->bindValue(':complemento', $this->cliente->getComplemento());
+            $stmt->bindValue(':senha', $this->cliente->getSenha());
+
+            //Verificando se o Statment foi Executado:
+            if ($stmt->execute()) {
+                //Caso Seja:
+                $classes = ['alert alert-success'];
+
+                return Tags::alertDismissible($classes, "Cadastro Efetuado com Sucesso!");
+            }
+
+            //Caso Não Seja:
+            $classes = ['alert alert-danger'];
+
+            return Tags::alertDismissible($classes, "Erro ao Efetuar Cadastro, Tente Novamente mais Tarde");
         } catch (\PDOException $ex) {
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();

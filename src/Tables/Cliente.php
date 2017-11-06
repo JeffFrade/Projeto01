@@ -18,6 +18,7 @@ class Cliente implements ClienteInterface
     private $numero;
     private $complemento;
     private $senha;
+    private $bairro;
 
     public function getCpf()
     {
@@ -146,6 +147,21 @@ class Cliente implements ClienteInterface
 
     public function setSenha($senha)
     {
+        $this->senha = $senha;
+    }
+
+    public function setMd5Senha($senha)
+    {
         $this->senha = md5($senha);
+    }
+
+    public function getBairro()
+    {
+        return $this->bairro;
+    }
+
+    public function setBairro($bairro)
+    {
+        $this->bairro = $bairro;
     }
 }

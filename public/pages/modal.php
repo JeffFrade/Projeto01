@@ -39,7 +39,7 @@
                         <?php
                             if (isset($_POST['btnLogin'])) {
                                 $cliente->setEmail($_POST['txtEmail']);
-                                $cliente->setSenha($_POST['txtSenha']);
+                                $cliente->setMd5Senha($_POST['txtSenha']);
 
                                 echo $sCliente->login();
                             }

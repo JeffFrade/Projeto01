@@ -32,7 +32,7 @@ require_once 'topo.php';
 
                             <div class="form-group">
                                 <label for="txtCpf">* CPF:</label>
-                                <input type="text" id="txtCpf" name="txtCpf" class="form-control" placeholder="CPF">
+                                <input type="text" id="txtCpf" name="txtCpf" class="form-control" placeholder="CPF" maxlength="14">
                             </div>
 
                             <div class="form-group">
@@ -42,12 +42,12 @@ require_once 'topo.php';
 
                             <div class="form-group">
                                 <label for="txtCelular">* Celular:</label>
-                                <input type="text" id="txtCelular" name="txtCelular" class="form-control" placeholder="Celular">
+                                <input type="text" id="txtCelular" name="txtCelular" class="form-control" placeholder="Celular" maxlength="14">
                             </div>
 
                             <div class="form-group">
                                 <label for="txtCep">* CEP:</label>
-                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP" v-model="cep" value="01514000">
+                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP" maxlength="8" v-model="cep" value="01514000">
                             </div>
 
                             <div class="form-group">
@@ -98,9 +98,24 @@ require_once 'topo.php';
                             <div>
                                 <br/>
                                 <?php
-                                    echo "<pre>";
-                                    print_r($_POST);
-                                    echo "</pre>";
+                                    if (isset($_POST['btnCadastrar'])) {
+                                        $cliente->setNome($_POST['txtNome']);
+                                        $cliente->setEmail($_POST['txtEmail']);
+                                        $cliente->setDataNasc($_POST['txtDataNasc']);
+                                        $cliente->setCpf($_POST['txtCpf']);
+                                        $cliente->setTelefone($_POST['txtTelefone']);
+                                        $cliente->setCelular($_POST['txtCelular']);
+                                        $cliente->setCep($_POST['txtCep']);
+                                        $cliente->setEndereco($_POST['txtEndereco']);
+                                        $cliente->setBairro($_POST['txtBairro']);
+                                        $cliente->setCidade($_POST['txtCidade']);
+                                        $cliente->setEstado($_POST['txtEstado']);
+                                        $cliente->setNumero($_POST['txtNumero']);
+                                        $cliente->setComplemento($_POST['txtComp']);
+                                        $cliente->setSenha($_POST['txtSenha']);
+
+                                        echo $sCliente->insertCliente();
+                                    }
                                 ?>
                             </div>
                         </div>

@@ -30,4 +30,7 @@ interface ClienteInterface
     public function setComplemento($complemento);
     public function getSenha();
     public function setSenha($senha);
+    public function setMd5Senha($senha);
+    public function getBairro();
+    public function setBairro($bairro);
 }
