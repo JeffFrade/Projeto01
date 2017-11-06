@@ -43,67 +43,10 @@
     </head>
 
     <body class="branco" id="app">
-        <header>
-            <nav class="navbar navbar-inverse navbar-static-top">
-                <div class="container">
-                    <div class="row">
-                    <div class="col-sm-2">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarCollapse" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-
-                            <a href="index.php" class="navbar-brand">Minha Loja</a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-10">
-                        <div id="navbarCollapse" class="navbar-collapse collapse">
-                            <form class="navbar-form navbar-left" id="frmFiltro" name="frmFiltro" method="get" action="">
-                                <div class="input-group input-menu">
-                                    <input type="text" id="txtBuscar" name="txtBuscar" placeholder="Buscar" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button type="submit" id="btnFiltro" name="btnFiltro" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                                    </span>
-                                </div>
-                            </form>
-
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="index.php"> <i class="fa fa-fw fa-home"></i> Home</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Produtos <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                        <li><a href="#">Separated link</a></li>
-                                        <li><a href="#">One more separated link</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#"><i class="fa fa-fw fa-users"></i> Contato</a></li>
-                                <?php if(!isset($_SESSION['nome']) || empty($_SESSION['nome'])): ?>
-                                <li><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                                <?php else: ?>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?= $_SESSION['nome'] ?> <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-pencil-square-o"></i> Alterar Dados</a></li>
-                                        <li><a href="#"><i class="fa fa-history"></i> Histórico</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="pages/logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
-                                    </ul>
-                                </li>
-                                <?php endif; ?>
-                                <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-default">3</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+        <?php
+            //Menu:
+            require_once 'pages/menu.php';
+        ?>
 
         <main>
             <section>
@@ -219,34 +162,17 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <h2>Novidades</h2>
-                        <hr/>
-                        <div class="well">
-                            <h3 class="text-center"><i class="fa fa-shopping-cart"></i> Lorem ipsum</h3>
-                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <br/>
-                            <h3 class="text-center"><i class="fa fa-shopping-cart"></i> Lorem ipsum</h3>
-                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                </div>
+                    <?php
+                        //Div da Direita:
+                        require_once 'pages/direita.php'
+                    ?>
             </section>
         </main>
 
-        <footer>
-            <div class="footer1">
-                <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
-            </div>
-
-            <div class="footer2">
-                <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
-            </div>
-
-            <div class="footer3">
-                <h4 class="text-center">Minha Loja - <?= date('Y')?> - Todos Direitos Reservados</h4>
-            </div>
-        </footer>
+        <?php
+            //Rodapé:
+            require_once 'pages/rodape.php';
+        ?>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>

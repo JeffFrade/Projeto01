@@ -67,6 +67,7 @@ class ServiceCliente implements ServiceClienteInterface
                 $classes = ['alert alert-success'];
 
                 //Retorno:
+                //O $_SERVER['REQUEST_URI'] Serve Para Voltar Para a Mesma Página
                 return Tags::alertDismissible($classes, "Login Efetuado com Sucesso!").Tags::scriptSimple('text/javascript', '$("#login").modal("show");setTimeout(function(){ location.href="'.$_SERVER['REQUEST_URI'].'"; }, 1000);');
             }
 
