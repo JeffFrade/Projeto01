@@ -23,7 +23,17 @@ class ServiceCliente implements ServiceClienteInterface
     //Método de Inserção de Clientes:
     public function insertCliente()
     {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "INSERT INTO cliente(cpf, nome, dataNasc, email, telefone, celular, cep, endereco, cidade, estado, numero, complemento, senha) VALUES(:cpf, :nome, :dataNasc, :email, :telefone, :celular, :cep, :endereco, :cidade, :estado, :numero, :complemento, :senha)";
 
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
     }
 
     ##### SELECT #####

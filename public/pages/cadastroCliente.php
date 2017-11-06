@@ -47,30 +47,35 @@ require_once 'topo.php';
 
                             <div class="form-group">
                                 <label for="txtCep">* CEP:</label>
-                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP">
+                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP" v-model="cep" value="01514000">
                             </div>
 
                             <div class="form-group">
                                 <label for="txtEndereco">* Endereço:</label>
-                                <input type="text" id="txtEndereco" name="txtEndereco" class="form-control" placeholder="Endereço">
+                                <input type="text" id="txtEndereco" name="txtEndereco" class="form-control" placeholder="Endereço" v-model="endereco">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txtBairro">* Bairro:</label>
+                                <input type="text" id="txtBairro" name="txtBairro" class="form-control" placeholder="Bairro" v-model="bairro">
                             </div>
 
                             <div class="form-group">
                                 <label for="txtViewCidade">* Cidade:</label>
-                                <input type="text" id="txtViewCidade" name="txtViewCidade" class="form-control" placeholder="Cidade" disabled="disabled">
+                                <input type="text" id="txtViewCidade" name="txtViewCidade" class="form-control" placeholder="Cidade" disabled="disabled" v-model="cidade">
                             </div>
 
                             <div class="form-group">
-                                <input type="hidden" id="txtCidade" name="txtCidade" class="form-control" placeholder="Cidade">
+                                <input type="hidden" id="txtCidade" name="txtCidade" class="form-control" placeholder="Cidade" value="{{ cidade }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="txtViewEstado">* Estado:</label>
-                                <input type="text" id="txtViewEstado" name="txtViewEstado" class="form-control" placeholder="Estado" disabled="disabled">
+                                <input type="text" id="txtViewEstado" name="txtViewEstado" class="form-control" placeholder="Estado" disabled="disabled" v-model="estado">
                             </div>
 
                             <div class="form-group">
-                                <input type="hidden" id="txtEstado" name="txtEstado" class="form-control" placeholder="Estado">
+                                <input type="hidden" id="txtEstado" name="txtEstado" class="form-control" placeholder="Estado" value="{{ estado }}">
                             </div>
 
                             <div class="form-group">
@@ -88,8 +93,17 @@ require_once 'topo.php';
                                 <input type="password" id="txtSenha" name="txtSenha" class="form-control" placeholder="Senha">
                             </div>
 
-                            <button type="submit" class="btn btn-success btn-right" id="btnCadastrar" name="btnCadastrar">Cadastrar</button>
-                    </div>
+                            <button type="submit" class="btn btn-success" id="btnCadastrar" name="btnCadastrar">Cadastrar</button>
+
+                            <div>
+                                <br/>
+                                <?php
+                                    echo "<pre>";
+                                    print_r($_POST);
+                                    echo "</pre>";
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
