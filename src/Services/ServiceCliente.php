@@ -20,6 +20,11 @@ class ServiceCliente implements ServiceClienteInterface
     }
 
     ##### INERT #####
+    //Método de Inserção de Clientes:
+    public function insertCliente()
+    {
+
+    }
 
     ##### SELECT #####
     //Método de Login:
