@@ -69,7 +69,7 @@ class ServiceProduto implements ServiceProdutoInterface
                 $vitrine .= '<a href="#"><img src="' . $dados['imagem'] . '" class="img-circle img-responsive img-vitrine" title="' . $dados['item'] . '" alt="' . $dados['item'] . '"/></a>'.PHP_EOL;
 
                 //Preço do Produto:
-                $vitrine .= '<strong><i class="fa fa-money"></i> Preço: <span class="text-success">' . $dados['preco'] . '</span></strong>'.PHP_EOL;
+                $vitrine .= '<strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ ' . number_format($dados['preco'], 2,',', '.') . '</span></strong>'.PHP_EOL;
 
                 //Botão de Detalhes:
                 $vitrine .= '<a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>'.PHP_EOL;
