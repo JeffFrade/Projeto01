@@ -30,6 +30,14 @@
                             <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success btn-lg btn-block">Login</button>
                         </fieldset>
                         <br/>
+                        <?php
+                            if (isset($_POST['btnLogin'])) {
+                                $funcionario->setUsuario($_POST['txtUsuario']);
+                                $funcionario->setMd5Senha($_POST['txtSenha']);
+
+                                echo $sFuncionario->login();
+                            }
+                        ?>
                     </form>
                 </div>
             </div>

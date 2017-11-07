@@ -110,7 +110,7 @@ class ServiceCliente implements ServiceClienteInterface
             $err = 0;
 
             //Somando ao Valor do Erro o Valor dos Códigos Obtidos na Validação:
-            $err += Validator::validate($this->cliente->getEmail(), "", "Preencha o Campo E-mail Corretamente", 1);
+            $err += Validator::validateRegex($this->cliente->getEmail(), "/^[\w.]+@[\w]+[\.][\w]{2,3}/", "Preencha o Campo E-mail Corretamente", 2);
             $err += Validator::validate($this->cliente->getSenha(), md5(""), "Preencha o Campo Senha Corretamente", 1);
 
             //Verificando se Há Erros:

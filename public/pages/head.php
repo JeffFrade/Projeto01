@@ -1,3 +1,41 @@
+<?php
+    //Autoload:
+    require_once '../../vendor/autoload.php';
+
+    //Utilização de Classes em Namespaces:
+    use Classes\Tables\Cliente;
+    use Classes\Tables\Produto;
+    use Classes\Tables\Funcionario;
+    use Classes\Services\ServiceCliente;
+    use Classes\Services\ServiceProduto;
+    use Classes\Services\ServiceFuncionario;
+
+    //Iniciando a Sessão (Caso Não Exista):
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+
+    //Conexão:
+    require_once 'connect.php';
+
+    //Classe de Cliente:
+    $cliente = new Cliente;
+
+    //Classe de Produto:
+    $produto = new Produto;
+
+    //Classe de Funcionário:
+    $funcionario = new Funcionario;
+
+    //Serviço de Cliente:
+    $sCliente = new ServiceCliente($db, $cliente);
+
+    //Serviço de Produto:
+    $sProduto = new ServiceProduto($db, $produto);
+
+    //Serviço de Funcionário:
+    $sFuncionario = new ServiceFuncionario($db, $funcionario);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
