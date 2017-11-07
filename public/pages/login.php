@@ -1,6 +1,10 @@
 <?php
     //Head odo HTML:
     require_once 'head.php';
+
+    //Destrói as Sessões de Login:
+    unset($_SESSION['usuario']);
+    unset($_SESSION['perfil']);
 ?>
 <body id="app" class="login-bg">
 <div class="container">
