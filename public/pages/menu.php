@@ -42,7 +42,7 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><i class="fa fa-fw fa-users"></i> Contato</a></li>
+                            <li class="<?= ($pagina == 'contato.php'?"active":"")?>"><a href="<?= ($pagina == 'index.php'?"pages/contato.php":"contato.php")?>"><i class="fa fa-fw fa-users"></i> Contato</a></li>
                             <?php if(!isset($_SESSION['nome']) || empty($_SESSION['nome'])): ?>
                                 <li class="<?= ($pagina == 'cadastroCliente.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
                             <?php else: ?>
