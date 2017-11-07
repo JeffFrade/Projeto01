@@ -9,7 +9,7 @@ require_once 'topo.php';
             <form id="frmCadastro" name="frmCadastro" method="post" action="">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <i class="fa fa-user"></i> Dados Pessoais
+                        <i class="fa fa-envelope-open"></i> Deixe Sua Mensagem
                     </div>
 
                     <div class="panel-body">
