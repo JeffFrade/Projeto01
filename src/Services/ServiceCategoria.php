@@ -49,6 +49,35 @@ class ServiceCategoria implements ServiceCategoriaInterface
         }
     }
 
+    //Método que Monta as Opções do Submenu:
+    public function menu($pagina)
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT categoria FROM categoria";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            $menu = "";
+
+            //Loop de Montagem de <option>:
+            while ($dados = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $menu.= sprintf('<li><a href="#">%s</a></li>', $dados['categoria'])."\n";
+            }
+
+            //Retorno:
+            return $menu;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erros:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
     ##### UPDATE #####
 
     ##### DELETE #####

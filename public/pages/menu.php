@@ -35,11 +35,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Categorias <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
+                                    <?= $sCategoria->menu($pagina); ?>
                                 </ul>
                             </li>
                             <li class="<?= ($pagina == 'contato.php'?"active":"")?>"><a href="<?= ($pagina == 'index.php'?"pages/contato.php":"contato.php")?>"><i class="fa fa-fw fa-users"></i> Contato</a></li>

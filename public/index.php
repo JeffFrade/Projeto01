@@ -5,8 +5,10 @@
     //Utilização de Classes em Namespaces:
     use Classes\Tables\Cliente;
     use Classes\Tables\Produto;
+    use Classes\Tables\Categoria;
     use Classes\Services\ServiceCliente;
     use Classes\Services\ServiceProduto;
+    use Classes\Services\ServiceCategoria;
 
     //Iniciando a Sessão (Caso Não Exista):
     if (!isset($_SESSION)) {
@@ -22,11 +24,17 @@
     //Classe de Produto:
     $produto = new Produto;
 
+    //Classe de Categoria:
+    $categoria = new Categoria;
+
     //Serviço de Cliente:
     $sCliente = new ServiceCliente($db, $cliente);
 
     //Serviço de Produto:
     $sProduto = new ServiceProduto($db, $produto);
+
+    //Serviço de Categoria:
+    $sCategoria = new ServiceCategoria($db, $categoria);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

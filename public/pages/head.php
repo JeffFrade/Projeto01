@@ -6,9 +6,11 @@
     use Classes\Tables\Cliente;
     use Classes\Tables\Produto;
     use Classes\Tables\Funcionario;
+    use Classes\Tables\Categoria;
     use Classes\Services\ServiceCliente;
     use Classes\Services\ServiceProduto;
     use Classes\Services\ServiceFuncionario;
+    use Classes\Services\ServiceCategoria;
 
     //Iniciando a Sessão (Caso Não Exista):
     if (!isset($_SESSION)) {
@@ -27,6 +29,9 @@
     //Classe de Funcionário:
     $funcionario = new Funcionario;
 
+    //Classe de Categoria:
+    $categoria = new Categoria;
+
     //Serviço de Cliente:
     $sCliente = new ServiceCliente($db, $cliente);
 
@@ -35,6 +40,9 @@
 
     //Serviço de Funcionário:
     $sFuncionario = new ServiceFuncionario($db, $funcionario);
+
+    //Serviço de Categoria:
+    $sCategoria = new ServiceCategoria($db, $categoria);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
