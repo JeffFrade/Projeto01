@@ -3,7 +3,7 @@
 require_once 'topo.php';
 ?>
         <div class="container">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <h2 class="text-left">Cadastre-Se</h2>
                 <hr/>
                 <form id="frmCadastro" name="frmCadastro" method="post" action="">
