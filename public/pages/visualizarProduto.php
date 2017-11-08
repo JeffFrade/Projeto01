@@ -7,6 +7,14 @@ $produto->setCod($_GET['cod']);
     <div class="container">
         <div class="col-lg-8">
             <?= $sProduto->mountVisualizacao(); ?>
+
+            <?php
+                if (isset($_POST['btnCarrinho'])) {
+                    if (!isset($_SESSION['nome'])) {
+
+                    }
+                }
+            ?>
         </div>
 
         <?php

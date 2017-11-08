@@ -30,14 +30,18 @@ require_once 'topo.php';
                             <textarea id="txtMsg" name="txtMsg" rows="5" class="form-control" placeholder="Mensagem"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-success" id="btnCadastrar" name="btnCadastrar">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" id="btnEnviar" name="btnEnviar">Enviar Mensagem</button>
 
                         <div>
                             <br/>
                             <?php
-                            if (isset($_POST['btnCadastrar'])) {
+                                if (isset($_POST['btnEnviar'])) {
+                                    $mensagem->setNome($_POST['txtNome']);
+                                    $mensagem->setEmail($_POST['txtEmail']);
+                                    $mensagem->setMensagem($_POST['txtMsg']);
 
-                            }
+                                    echo $sMensagem->insertMensagem();
+                                }
                             ?>
                         </div>
                     </div>

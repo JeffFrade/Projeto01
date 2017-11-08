@@ -78,7 +78,7 @@ class Tags implements TagsInterface
         $view.= "<hr/>".PHP_EOL;
 
         //Imagem:
-        $view.= sprintf('<a href="%s" data-lightbox="%s"><img src="%s" class="centro img-responsive img-rounded" title="%s" alt="%s"></a>', $dados['imagem'], $dados['item'], $dados['imagem'], $dados['item'], $dados['item']).PHP_EOL;
+        $view.= sprintf('<a href="%s" data-lightbox="'.$dados['item'].'"><img src="%s" class="centro img-responsive img-rounded" title="%s" alt="%s"></a>', $dados['imagem'], $dados['imagem'], $dados['item'], $dados['item']).PHP_EOL;
 
         //Descrição:
         $view.= '<strong><i class="fa fa-comment"></i> Descrição: </strong><p class="text-justify">'.$dados['descricao'].'</p>'.PHP_EOL;

@@ -153,7 +153,7 @@ class ServiceCliente implements ServiceClienteInterface
             $classes = ['alert alert-danger'];
 
             //Retorno:
-            return Tags::alertDismissible($classes, "E-mail ou Senha Inválidos").Tags::scriptSimple('text/javascript', 'text/javascript', '$("#login").modal("show");').Tags::scriptSimple('text/javascript', '$("#login").modal("show");');
+            return Tags::alertDismissible($classes, "E-mail ou Senha Inválidos").Tags::scriptSimple('text/javascript', '$("#login").modal("show");');
 
         } catch (\PDOException $ex) {
             //Caso Haja Erro:

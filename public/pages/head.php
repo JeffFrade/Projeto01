@@ -7,10 +7,12 @@
     use Classes\Tables\Produto;
     use Classes\Tables\Funcionario;
     use Classes\Tables\Categoria;
+    use Classes\Tables\Mensagem;
     use Classes\Services\ServiceCliente;
     use Classes\Services\ServiceProduto;
     use Classes\Services\ServiceFuncionario;
     use Classes\Services\ServiceCategoria;
+    use Classes\Services\ServiceMensagem;
 
     //Iniciando a Sessão (Caso Não Exista):
     if (!isset($_SESSION)) {
@@ -32,6 +34,9 @@
     //Classe de Categoria:
     $categoria = new Categoria;
 
+    //Classe de Mensagem:
+    $mensagem = new Mensagem;
+
     //Serviço de Cliente:
     $sCliente = new ServiceCliente($db, $cliente);
 
@@ -43,6 +48,9 @@
 
     //Serviço de Categoria:
     $sCategoria = new ServiceCategoria($db, $categoria);
+
+    //Serviço de Mensagem:
+    $sMensagem = new ServiceMensagem($db, $mensagem);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
