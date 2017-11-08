@@ -28,7 +28,7 @@
         </li>
 
         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Mensagens <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Mensagens <b class="caret"></b> <?= ($sMensagem->countMensagem() > 0?'<span class="badge-default">'.$sMensagem->countMensagem().'</span></a>':''); ?>
             <ul class="dropdown-menu message-dropdown">
                 <?= $sMensagem->showMensagens(); ?>
                 <!--<li class="message-preview">

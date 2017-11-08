@@ -38,7 +38,7 @@
                                         <i class="fa fa-comments fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">26</div>
+                                        <div class="huge"><?= $sMensagem->countMensagem(); ?></div>
                                         <div>Mensagens</div>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                         <i class="fa fa-users fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">12</div>
+                                        <div class="huge"><?= $sCliente->countCliente(); ?></div>
                                         <div>Clientes</div>
                                     </div>
                                 </div>

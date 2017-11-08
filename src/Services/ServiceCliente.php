@@ -5,6 +5,7 @@ namespace Classes\Services;
 use Classes\Tables\ClienteInterface;
 use Classes\Util\Tags;
 use Classes\Util\Validator;
+use Classes\Util\Sql;
 
 class ServiceCliente implements ServiceClienteInterface
 {
@@ -159,6 +160,12 @@ class ServiceCliente implements ServiceClienteInterface
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();
         }
+    }
+
+    //Método de Contagem de Clientes:
+    public function countCliente()
+    {
+        return Sql::count($this->db, 'nome', 'cliente');
     }
 
     ##### UPDATE #####

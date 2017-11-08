@@ -5,6 +5,7 @@ namespace Classes\Services;
 use Classes\Tables\MensagemInterface;
 use Classes\Util\Validator;
 use Classes\Util\Tags;
+use Classes\Util\Sql;
 
 class ServiceMensagem implements ServiceMensagemInterface
 {
@@ -110,6 +111,12 @@ class ServiceMensagem implements ServiceMensagemInterface
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();
         }
+    }
+
+    //Método Contador de Mensagens:
+    public function countMensagem()
+    {
+       return Sql::count($this->db, 'mensagem', 'mensagens');
     }
 
     ##### DELETE #####
