@@ -4,6 +4,7 @@ namespace Classes\Services;
 
 use Classes\Tables\ProdutoInterface;
 use Classes\Util\Tags;
+use Classes\Util\Sql;
 
 class ServiceProduto implements ServiceProdutoInterface
 {
@@ -180,6 +181,12 @@ class ServiceProduto implements ServiceProdutoInterface
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();
         }
+    }
+
+    //Método Contador de Produtos:
+    public function countProduto()
+    {
+        return Sql::count($this->db, 'item', 'produtos');
     }
 
     ##### UPDATE #####

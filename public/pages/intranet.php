@@ -101,11 +101,11 @@
                             <div class="panel-heading">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <i class="fa fa-cogs fa-5x"></i>
+                                        <i class="fa fa-tags fa-5x"></i>
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div class="huge">13</div>
-                                        <div>Pedidos</div>
+                                        <div class="huge"><?= $sProduto->countProduto(); ?></div>
+                                        <div>Produtos</div>
                                     </div>
                                 </div>
                             </div>
