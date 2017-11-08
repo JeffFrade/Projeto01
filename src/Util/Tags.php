@@ -100,4 +100,18 @@ class Tags implements TagsInterface
         //Retorno:
         return $view;
     }
+
+    //Método que Monta o Submenu de Mensagens:
+    public static function mountMensagem($dados = [])
+    {
+        $view = '<li class="message-preview">'.PHP_EOL;
+        $view .= '<a href="#">'.PHP_EOL;
+        $view .= '<h5><strong>'.$dados['nome'].'</strong></h5>'.PHP_EOL;
+        $view .= '<p>'.Strings::mensagens($dados['mensagem'], 50).'</p>'.PHP_EOL;
+        $view .=  '</a>'.PHP_EOL;
+        $view .=  '</li>'.PHP_EOL;
+
+        //Retorno:
+        return $view;
+    }
 }

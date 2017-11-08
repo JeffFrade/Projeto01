@@ -83,6 +83,34 @@ class ServiceMensagem implements ServiceMensagemInterface
     }
 
     ##### SELECT #####
+    //Método que Monta as Mensagens no Menu da Intranet:
+    public function showMensagens()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT nome, mensagem FROM mensagens ORDER BY id DESC LIMIT 3";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            $mensagens = "";
+
+            //Loop de Exibição:
+            while ($dados = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $mensagens .= Tags::mountMensagem($dados);
+            }
+
+            //Retorno:
+            return $mensagens;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
 
     ##### DELETE #####
 }

@@ -14,4 +14,6 @@ interface TagsInterface
     public static function pagination($arr = [], $page);
     //Método que Monta a Visualização do Produto:
     public static function paginaProduto($dados = []);
+    //Método que Monta o Submenu de Mensagens:
+    public static function mountMensagem($dados = []);
 }

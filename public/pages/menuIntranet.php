@@ -30,30 +30,25 @@
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Mensagens <b class="caret"></b></a>
             <ul class="dropdown-menu message-dropdown">
-                <li class="message-preview">
+                <?= $sMensagem->showMensagens(); ?>
+                <!--<li class="message-preview">
                     <a href="#">
-                        <h5 class="media-heading"><strong>John Smith</strong>
-                        </h5>
-                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                        <h5><strong>John Smith</strong></h5>
                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
                     </a>
                 </li>
                 <li class="message-preview">
                     <a href="#">
-                        <h5 class="media-heading"><strong>John Smith</strong>
-                        </h5>
-                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                        <h5><strong>John Smith</strong></h5>
                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
                     </a>
                 </li>
                 <li class="message-preview">
                     <a href="#">
-                        <h5 class="media-heading"><strong>John Smith</strong>
-                        </h5>
-                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                        <h5><strong>John Smith</strong></h5>
                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
                     </a>
-                </li>
+                </li>-->
                 <li class="message-footer">
                     <a href="#" class="text-center">Ler Todas as Mensagens</a>
                 </li>
