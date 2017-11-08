@@ -76,7 +76,7 @@
                 <a href="#"><i class="fa fa-fw fa-file-excel-o"></i> Relatório</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-tags"></i> Produtos</a>
+                <a href="<?= ($pagina == 'consultarProdutos.php'?'class="active"':'')?>"><i class="fa fa-fw fa-tags"></i> Produtos</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-fw fa-users"></i> Clientes</a>

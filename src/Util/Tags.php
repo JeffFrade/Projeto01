@@ -67,4 +67,37 @@ class Tags implements TagsInterface
         //Retorno:
         return $paginador;
     }
+
+    //Método que Monta a Visualização do Produto:
+    public static function paginaProduto($dados = [])
+    {
+        $view = "";
+
+        //Título do Item:
+        $view.= '<h2 class="text-center">'.$dados['item'].'</h2>'.PHP_EOL;
+        $view.= "<hr/>".PHP_EOL;
+
+        //Imagem:
+        $view.= sprintf('<a href="%s" data-lightbox="%s"><img src="%s" class="centro img-responsive img-rounded" title="%s" alt="%s"></a>', $dados['imagem'], $dados['item'], $dados['imagem'], $dados['item'], $dados['item']).PHP_EOL;
+
+        //Descrição:
+        $view.= '<strong><i class="fa fa-comment"></i> Descrição: </strong><p class="text-justify">'.$dados['descricao'].'</p>'.PHP_EOL;
+        $view.= "<hr/>".PHP_EOL;
+
+        //Categoria:
+        $view.= "<strong><i class='fa fa-tag'></i> Categoria: </strong>".$dados['categoria'].PHP_EOL;
+        $view.= "<br/>".PHP_EOL;
+
+        //Preço:
+        $view.= '<strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ '.number_format($dados['preco'], 2,',', '.')."</span></strong>".PHP_EOL;
+        $view.= '<hr/>'.PHP_EOL;
+
+        //Carrinho:
+        $view.= '<form id="frmCarrinho" name="frmCarrinho" method="post" action="">'.PHP_EOL;
+        $view.= '<button class="btn btn-primary" type="submit" id="btnCarrinho" name="btnCarrinho"><i class="fa fa-cart-plus"></i> Adicionar ao Carrinho</button>'.PHP_EOL;
+        $view.= '</form>'.PHP_EOL;
+
+        //Retorno:
+        return $view;
+    }
 }

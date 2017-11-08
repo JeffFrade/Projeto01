@@ -15,7 +15,7 @@
                             <span class="icon-bar"></span>
                         </button>
 
-                        <a href="index.php" class="navbar-brand">Minha Loja</a>
+                        <a href="<?= ($pagina == 'index.php'?"index.php":"../index.php")?>" class="navbar-brand">Minha Loja</a>
                     </div>
                 </div>
 
@@ -32,8 +32,8 @@
 
                         <ul class="nav navbar-nav navbar-right">
                             <li class="<?= ($pagina == 'index.php'?"active":"")?>"><a href="<?= ($pagina == 'index.php'?"index.php":"../index.php")?>"> <i class="fa fa-fw fa-home"></i> Home</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Categorias <span class="caret"></span></a>
+                            <li class="dropdown <?=($pagina == 'visualizarProduto.php'?"active":"")?>">
+                                <a href="<?= ($pagina == 'index.php'?"pages/categorias.php":"categorias.php")?>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-arrows-v"></i> Categorias <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <?= $sCategoria->menu($pagina); ?>
                                 </ul>

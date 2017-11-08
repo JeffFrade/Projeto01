@@ -66,13 +66,13 @@ class ServiceProduto implements ServiceProdutoInterface
                 $vitrine .= '<h4 class="text-center">' . $dados['item'] . '</h4>'.PHP_EOL;
 
                 //Imagem do Produto:
-                $vitrine .= '<a href="#"><img src="' . $dados['imagem'] . '" class="img-circle img-responsive img-vitrine" title="' . $dados['item'] . '" alt="' . $dados['item'] . '"/></a>'.PHP_EOL;
+                $vitrine .= '<a href="'.$dados['imagem'].'" data-lightbox="'.$dados['cod'].'"><img src="' . $dados['imagem'] . '" class="img-circle img-responsive img-vitrine" title="' . $dados['item'] . '" alt="' . $dados['item'] . '"/></a>'.PHP_EOL;
 
                 //Preço do Produto:
                 $vitrine .= '<strong><i class="fa fa-money"></i> Preço: <span class="text-success">R$ ' . number_format($dados['preco'], 2,',', '.') . '</span></strong>'.PHP_EOL;
 
                 //Botão de Detalhes:
-                $vitrine .= '<a href="#" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>'.PHP_EOL;
+                $vitrine .= '<a href="pages/visualizarProduto.php?cod='.$dados['cod'].'" role="button" class="btn btn-primary btn-block"><i class="fa fa-search"></i> Clique Para Ver Detalhes</a>'.PHP_EOL;
 
                 //Finaliza o Fundo Cinza (well);
                 $vitrine .= '</div>'.PHP_EOL;
@@ -144,10 +144,38 @@ class ServiceProduto implements ServiceProdutoInterface
             $inicio = ($reg * $pagina) - $reg;
 
             //Array de Retorno:
-            $ret = array('inicio' => $inicio, 'reg' => $reg, 'pagina' => $pagina, 'numPags' => $numPags, 'anterior' => $anterior, 'proxima' => $pagina);
+            $ret = array('inicio' => $inicio, 'reg' => $reg, 'pagina' => $pagina, 'numPags' => $numPags, 'anterior' => $anterior, 'proxima' => $proxima);
 
             //Retorno:
             return $ret;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
+    //Método que Monta a Página de Visualização do Produto:
+    public function mountVisualizacao()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT produtos.item, categoria.categoria, produtos.descricao, produtos.preco, produtos.qtde, produtos.imagem FROM produtos LEFT JOIN categoria ON categoria.id = produtos.categoria WHERE produtos.cod = :cod";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando as Variáveis:
+            $stmt->bindValue(':cod', $this->produto->getCod());
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            //Jogando os Dados em um Array Associativo:
+            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            //Retorno da Visualização:
+            return Tags::paginaProduto($dados);
         } catch (\PDOException $ex) {
             //Caso Haja Erro:
             return $ex->getCode()." ".$ex->getMessage();

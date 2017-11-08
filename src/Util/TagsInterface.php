@@ -12,4 +12,6 @@ interface TagsInterface
     public static function scriptSimple($type = "", $script);
     //Montagem do Paginador:
     public static function pagination($arr = [], $page);
+    //Método que Monta a Visualização do Produto:
+    public static function paginaProduto($dados = []);
 }
