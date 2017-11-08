@@ -52,11 +52,11 @@
             <li>
                 <a href="#"><i class="fa fa-fw fa-file-excel-o"></i> Relatório</a>
             </li>
-            <li <?= ($pagina == 'consultarProdutos.php'?'class="active"':'')?>>
+            <li <?= ($pagina == 'consultarProdutos.php' || $pagina == 'cadastrarProdutos.php'?'class="active"':'')?>>
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li>
-                        <a href="#">Cadastrar</a>
+                        <a href="cadastrarProdutos.php">Cadastrar</a>
                     </li>
                     <li>
                         <a href="consultarProdutos.php">Consultar</a>
