@@ -90,7 +90,7 @@ class ServiceMensagem implements ServiceMensagemInterface
         //Tratamento de Erros:
         try {
             //Query SQL:
-            $sql = "SELECT nome, mensagem FROM mensagens ORDER BY id DESC LIMIT 3";
+            $sql = "SELECT id, nome, mensagem FROM mensagens ORDER BY id DESC LIMIT 3";
 
             //Criando o Statment:
             $stmt = $this->db->prepare($sql);

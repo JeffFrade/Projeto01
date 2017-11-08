@@ -189,6 +189,41 @@ class ServiceProduto implements ServiceProdutoInterface
         return Sql::count($this->db, 'item', 'produtos');
     }
 
+    //Método de Retorno em Tabela dos Produtos:
+    public function selectProduto()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT produtos.cod, produtos.item, categoria.categoria, produtos.preco, produtos.qtde FROM produtos LEFT JOIN categoria ON produtos.categoria = categoria.id";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            $table = "";
+            //Loop de Criação da Tabela:
+            while ($dados = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $table.= '<tr>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['cod'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['item'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['categoria'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">R$ '.number_format($dados['preco'], 2,',', '.').'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['qtde'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center"><a href="ediDelProdutos.php?cod='.$dados['cod'].'" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span></a></td>'.PHP_EOL;
+                $table.= '</tr>'.PHP_EOL;
+            }
+
+            //Retorno:
+            return $table;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
     ##### UPDATE #####
 
     ##### DELETE #####

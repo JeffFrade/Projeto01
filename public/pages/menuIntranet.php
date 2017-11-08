@@ -31,24 +31,6 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> Mensagens <b class="caret"></b> <?= ($sMensagem->countMensagem() > 0?'<span class="badge-default">'.$sMensagem->countMensagem().'</span></a>':''); ?>
             <ul class="dropdown-menu message-dropdown">
                 <?= $sMensagem->showMensagens(); ?>
-                <!--<li class="message-preview">
-                    <a href="#">
-                        <h5><strong>John Smith</strong></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                    </a>
-                </li>
-                <li class="message-preview">
-                    <a href="#">
-                        <h5><strong>John Smith</strong></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                    </a>
-                </li>
-                <li class="message-preview">
-                    <a href="#">
-                        <h5><strong>John Smith</strong></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                    </a>
-                </li>-->
                 <li class="message-footer">
                     <a href="#" class="text-center">Ler Todas as Mensagens</a>
                 </li>
@@ -70,8 +52,16 @@
             <li>
                 <a href="#"><i class="fa fa-fw fa-file-excel-o"></i> Relatório</a>
             </li>
-            <li>
-                <a href="<?= ($pagina == 'consultarProdutos.php'?'class="active"':'')?>"><i class="fa fa-fw fa-tags"></i> Produtos</a>
+            <li <?= ($pagina == 'consultarProdutos.php'?'class="active"':'')?>>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo" class="collapse">
+                    <li>
+                        <a href="#">Cadastrar</a>
+                    </li>
+                    <li>
+                        <a href="consultarProdutos.php">Consultar</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#"><i class="fa fa-fw fa-users"></i> Clientes</a>
