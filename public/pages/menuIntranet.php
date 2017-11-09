@@ -61,13 +61,10 @@
                     <li>
                         <a href="consultarProdutos.php"><i class="fa fa-search"></i> Consultar Produto</a>
                     </li>
-                    <li>
-                        <a href="cadastrarProdutos.php"><i class="fa fa-tag"></i> Cadastrar Categoria</a>
-                    </li>
-                    <li>
-                        <a href="consultarProdutos.php"><i class="fa fa-search"></i> Consultar Categoria</a>
-                    </li>
                 </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-fw fa-tag"></i> Categorias</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-fw fa-users"></i> Clientes</a>

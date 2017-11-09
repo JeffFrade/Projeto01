@@ -40,17 +40,17 @@
                             </li>
                             <li class="<?= ($pagina == 'contato.php'?"active":"")?>"><a href="<?= ($pagina == 'index.php'?"pages/contato.php":"contato.php")?>"><i class="fa fa-fw fa-users"></i> Contato</a></li>
                             <?php if(!isset($_SESSION['nome']) || empty($_SESSION['nome'])): ?>
-                                <li class="<?= ($pagina == 'cadastroCliente.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                                <li class="<?= ($pagina == 'cadastroCliente.php' || $pagina == 'esqueciSenha.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
                             <?php else: ?>
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?= $_SESSION['nome'] ?> <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-pencil-square-o"></i> Alterar Dados</a></li>
+                                        <li><a href="#"><i class="fa fa-pencil-square-o"></i> Meus Dados</a></li>
                                         <li><a href="#"><i class="fa fa-history"></i> Histórico</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-primary">3</span></a></li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="<?= ($pagina == 'index.php'?"pages/logado.php":"logado.php")?>"><i class="fa fa-power-off"></i> Logout</a></li>
+                                        <li><a href="<?= ($pagina == 'index.php'?"pages/logout.php":"logout.php")?>"><i class="fa fa-power-off"></i> Logout</a></li>
                                     </ul>
                                 </li>
                             <?php endif; ?>

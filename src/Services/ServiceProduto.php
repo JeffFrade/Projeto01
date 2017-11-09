@@ -313,6 +313,44 @@ class ServiceProduto implements ServiceProdutoInterface
     }
 
     ##### UPDATE #####
+    //Método de Atualização dos Dados do Produto:
 
     ##### DELETE #####
+    //Método de Exclusão do Produto:
+    public function deleteProduto()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "DELETE FROM produtos WHERE cod = :cod";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando as Variáveis:
+            $stmt->bindValue(':cod', $this->produto->getCod());
+
+            //Verificando se o Statment Foi Executado:
+            if ($stmt->execute()) {
+                //Caso Seja:
+                $classes = ['alert alert-success'];
+
+                ######################################
+                // IMPLEMENTAR O DELETE DO CARRINHO //
+                ######################################
+
+                //Retorno:
+                return Tags::alertDismissible($classes, "Produto Deletado com Sucesso!");
+            }
+
+            //Caso Não Seja:
+            $classes = ['alert alert-danger'];
+
+            //Retorno:
+            return Tags::alertDismissible($classes, "Erro ao Deletar o Produto");
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
 }

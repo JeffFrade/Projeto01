@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="form-group">
-                        <a href="#">Esqueci Minha Senha</a><br/>
+                        <a href="<?= ($pagina == "index.php"?'pages/esqueciSenha.php':'esqueciSenha.php'); ?>">Esqueci Minha Senha</a><br/>
                     </div>
 
                     <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Login</button>
