@@ -32,6 +32,8 @@
                             </div>
 
                             <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success btn-lg btn-block">Login</button>
+                            <br/>
+                            <a href="../index.php">Voltar a Home</a>
                         </fieldset>
                         <br/>
                         <?php

@@ -61,6 +61,10 @@ class Produto implements ProdutoInterface
 
     public function setPreco($preco)
     {
+        if (!strpos($preco, '.')) {
+            $preco.= '.00';
+        }
+
         $this->preco = $preco;
     }
 

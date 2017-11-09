@@ -78,6 +78,19 @@ require_once 'head.php';
 
                             <div>
                                 <br/>
+                                <?php
+                                    if (isset($_POST['btnCadastrar'])) {
+                                        $produto->setItem($_POST['txtItem']);
+                                        $produto->setCategoria($_POST['cmbCategoria']);
+                                        $produto->setDescricao($_POST['txtDescricao']);
+                                        $produto->setPreco($_POST['txtPreco']);
+                                        $produto->setVitrine($_POST['cmbVitrine']);
+                                        $produto->setQtde($_POST['txtQtde']);
+                                        $produto->setImagem($_POST['txtImg']);
+
+                                        echo $sProduto->insertProduto();
+                                    }
+                                ?>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ namespace Classes\Services;
 use Classes\Tables\ProdutoInterface;
 use Classes\Util\Tags;
 use Classes\Util\Sql;
+use Classes\Util\Validator;
 
 class ServiceProduto implements ServiceProdutoInterface
 {
@@ -20,6 +21,59 @@ class ServiceProduto implements ServiceProdutoInterface
     }
 
     ##### INSERT #####
+    //Método de Inserção de Produtos:
+    public function insertProduto()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "INSERT INTO produtos(item, categoria, descricao, preco, vitrine, qtde, imagem) VALUES(:item, :categoria, :descricao, :preco, :vitrine, :qtde, :imagem)";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            $err = 0;
+
+            //Validações:
+            $err += Validator::validate($this->produto->getItem(), "", "Preencha o Campo Item Corretamente", 1);
+            $err += Validator::validate($this->produto->getDescricao(), "", "Preencha o Campo Descrição Corretamente", 1);
+            $err += Validator::validateRegex($this->produto->getPreco(), "/^[\d]*\.[\d]{2}/", "Preencha o Campo Preço Corretamente", 2);
+            $err += Validator::validate($this->produto->getQtde(), "", "Preencha o Campo Quantidade Corretamente", 2);
+            $err += Validator::validate($this->produto->getImagem(), "", "Preencha o Campo Imagem Corretamente", 1);
+
+            //Verificando se Há Erros:
+            if ($err != 0) {
+                //Caso Haja:
+                return false;
+            }
+
+            //Adicionando os Parâmetros:
+            $stmt->bindValue(':item', $this->produto->getItem());
+            $stmt->bindValue(':categoria', $this->produto->getCategoria());
+            $stmt->bindValue(':descricao', $this->produto->getDescricao());
+            $stmt->bindValue(':preco', $this->produto->getPreco());
+            $stmt->bindValue(':vitrine', $this->produto->getVitrine());
+            $stmt->bindValue(':qtde', $this->produto->getQtde());
+            $stmt->bindValue(':imagem', $this->produto->getImagem());
+
+            //Verificando se o Statment Foi Executado:
+            if ($stmt->execute()) {
+                //Caso Seja:
+                $classes = ['alert alert-success'];
+
+                return Tags::alertDismissible($classes, "Produto Cadastrado com Sucesso!");
+            }
+
+            //Caso Não Seja:
+            $classes = ['alert alert-danger'];
+
+            return Tags::alertDismissible($classes, "Erro ao Cadastrar Produto");
+
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
 
     ##### SELECT #####
     //Método que Retorna os Produtos da Vitrine:
