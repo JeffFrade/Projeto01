@@ -44,13 +44,7 @@
                 <a href="intranet.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i> Gráficos</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-table"></i> Tabelas</a>
-            </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-file-excel-o"></i> Relatório</a>
+                <a href="relatorio.php"><i class="fa fa-fw fa-file-excel-o"></i> Relatório de Vendas</a>
             </li>
             <li <?= ($pagina == 'consultarProdutos.php' || $pagina == 'cadastrarProdutos.php' || $pagina == 'ediDelProdutos.php'?'class="active"':'')?>>
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
@@ -66,8 +60,8 @@
             <li>
                 <a href="#"><i class="fa fa-fw fa-tag"></i> Categorias</a>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-users"></i> Clientes</a>
+            <li <?= ($pagina == 'consultarClientes.php'?'class="active"':'')?>>
+                <a href="consultarClientes.php"><i class="fa fa-fw fa-users"></i> Clientes</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Vendas</a>

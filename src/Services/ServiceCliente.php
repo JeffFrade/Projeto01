@@ -168,6 +168,42 @@ class ServiceCliente implements ServiceClienteInterface
         return Sql::count($this->db, 'nome', 'cliente');
     }
 
+    //Método de Retorno (Em Tabela) dos Clientes:
+    public function selectCliente()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT cpf, nome, email, telefone, celular FROM cliente";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            $table = "";
+
+            //Loop Para Criação da Tabela:
+            while ($dados = $stmt->fetch(\PDO::FETCH_ASSOC)) {
+                $table.= '<tr>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['cpf'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['nome'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['email'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['telefone'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center">'.$dados['celular'].'</td>'.PHP_EOL;
+                $table.= '<td class="text-center"><a href="ediDelClientes.php?cpf='.$dados['cpf'].'" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span></a></td>'.PHP_EOL;
+                $table.= '</tr>'.PHP_EOL;
+            }
+
+            //Retorno:
+            return $table;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
     ##### UPDATE #####
 
     ##### DELETE #####

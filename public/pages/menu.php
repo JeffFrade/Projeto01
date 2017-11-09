@@ -42,10 +42,10 @@
                             <?php if(!isset($_SESSION['nome']) || empty($_SESSION['nome'])): ?>
                                 <li class="<?= ($pagina == 'cadastroCliente.php' || $pagina == 'esqueciSenha.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
                             <?php else: ?>
-                                <li class="dropdown">
+                                <li class="dropdown <?= ($pagina == 'ediDelCliente.php'?"active":"")?>">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?= $_SESSION['nome'] ?> <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="fa fa-pencil-square-o"></i> Meus Dados</a></li>
+                                        <li><a href="<?= ($pagina == 'index.php'?"pages/ediDelClientes.php":"ediDelClientes.php")?>"><i class="fa fa-pencil-square-o"></i> Meus Dados</a></li>
                                         <li><a href="#"><i class="fa fa-history"></i> Histórico</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#"><i class="fa fa-fw fa-shopping-cart"></i> Carrinho <span class="badge-primary">3</span></a></li>

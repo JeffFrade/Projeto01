@@ -55,9 +55,7 @@ class ServiceMensagem implements ServiceMensagemInterface
                 //Caso Seja:
 
                 ##### IMPLEMENTAR #####
-                /*//Cabeçalhos (Headers) do E-mail:
-                $headers= 'From: <Minha Loja> jefferrson.frade@gmail.com' . "\r\n";
-                $headers.= 'Reply-To: jefferrson.frade@gmail.com' . "\r\n" . $headers.= 'X-Mailer: PHP/'.phpversion();
+                /* UTILIZAR MÉTODO DA CLASSE MAIL
 
                 //Envio dos E-mails:
                 //Para Quem Enviou a Mensagem:
