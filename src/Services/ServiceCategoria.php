@@ -38,7 +38,7 @@ class ServiceCategoria implements ServiceCategoriaInterface
 
             //Loop de Montagem de <option>:
             while ($dados = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-                $option.= sprintf('<option value="%s">%s</option>', $dados['id'], $dados['categoria'])."\n";
+                $option.= sprintf('<option value="%s" '.($this->categoria->getId() == $dados['id']?'class="selected"':'').'>%s</option>', $dados['id'], $dados['categoria'])."\n";
             }
 
             //Retorno:

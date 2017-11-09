@@ -278,6 +278,40 @@ class ServiceProduto implements ServiceProdutoInterface
         }
     }
 
+    //Método que Procura um Produto:
+    public function findProduto()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT cod, item, categoria, descricao, preco, vitrine, qtde, imagem FROM produtos WHERE cod = :cod";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando as Variáveis:
+            $stmt->bindValue(':cod', $this->produto->getCod());
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            //Jogando os Dados num Array:
+            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            //Passando Valores Para os Setters:
+            $this->produto->setCod($dados['cod']);
+            $this->produto->setItem($dados['item']);
+            $this->produto->setCategoria($dados['categoria']);
+            $this->produto->setDescricao($dados['descricao']);
+            $this->produto->setPreco($dados['preco']);
+            $this->produto->setVitrine($dados['vitrine']);
+            $this->produto->setQtde($dados['qtde']);
+            $this->produto->setImagem($dados['imagem']);
+        } catch (\PDOException $ex) {
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
     ##### UPDATE #####
 
     ##### DELETE #####

@@ -52,14 +52,20 @@
             <li>
                 <a href="#"><i class="fa fa-fw fa-file-excel-o"></i> Relatório</a>
             </li>
-            <li <?= ($pagina == 'consultarProdutos.php' || $pagina == 'cadastrarProdutos.php'?'class="active"':'')?>>
+            <li <?= ($pagina == 'consultarProdutos.php' || $pagina == 'cadastrarProdutos.php' || $pagina == 'ediDelProdutos.php'?'class="active"':'')?>>
                 <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Produtos <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" class="collapse">
                     <li>
-                        <a href="cadastrarProdutos.php">Cadastrar</a>
+                        <a href="cadastrarProdutos.php"><i class="fa fa-tags"></i> Cadastrar Produto</a>
                     </li>
                     <li>
-                        <a href="consultarProdutos.php">Consultar</a>
+                        <a href="consultarProdutos.php"><i class="fa fa-search"></i> Consultar Produto</a>
+                    </li>
+                    <li>
+                        <a href="cadastrarProdutos.php"><i class="fa fa-tag"></i> Cadastrar Categoria</a>
+                    </li>
+                    <li>
+                        <a href="consultarProdutos.php"><i class="fa fa-search"></i> Consultar Categoria</a>
                     </li>
                 </ul>
             </li>

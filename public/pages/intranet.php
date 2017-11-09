@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-warning">
-                            <strong>Aviso: </strong> Dados Correspondentes a Este Ano (<?= date('Y')?>).
+                            <strong>Aviso: </strong> Dados dos Gráficos Correspondentes a Este Ano (<?= date('Y')?>).
                         </div>
                     </div>
                 </div>
