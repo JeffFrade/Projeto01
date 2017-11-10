@@ -192,7 +192,7 @@ class ServiceCliente implements ServiceClienteInterface
                 $table.= '<td class="text-center">'.$dados['email'].'</td>'.PHP_EOL;
                 $table.= '<td class="text-center">'.$dados['telefone'].'</td>'.PHP_EOL;
                 $table.= '<td class="text-center">'.$dados['celular'].'</td>'.PHP_EOL;
-                $table.= '<td class="text-center"><a href="ediDelClientes.php?cpf='.$dados['cpf'].'" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span></a></td>'.PHP_EOL;
+                $table.= '<td class="text-center"><a href="ediDelClientesIntranet.php?cpf='.$dados['cpf'].'" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-search"></span></a></td>'.PHP_EOL;
                 $table.= '</tr>'.PHP_EOL;
             }
 
@@ -200,6 +200,41 @@ class ServiceCliente implements ServiceClienteInterface
             return $table;
         } catch (\PDOException $ex) {
             //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
+
+    //Método de Busca de Clientes:
+    public function findCliente()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "SELECT cpf, nome, dataNasc, email, telefone, celular, cep, numero, complemento FROM cliente WHERE cpf = :cpf";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando as Variáveis:
+            $stmt->bindValue(':cpf', $this->cliente->getCpf());
+
+            //Executando o Statment:
+            $stmt->execute();
+
+            //Jogando os Dados num Array:
+            $dados = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+            //Jogando os Dados nos Setters:
+            $this->cliente->setCpf($dados['cpf']);
+            $this->cliente->setNome($dados['nome']);
+            $this->cliente->setDataNasc($dados['dataNasc']);
+            $this->cliente->setEmail($dados['email']);
+            $this->cliente->setTelefone($dados['telefone']);
+            $this->cliente->setCelular($dados['celular']);
+            $this->cliente->setCep($dados['cep']);
+            $this->cliente->setNumero($dados['numero']);
+            $this->cliente->setComplemento($dados['complemento']);
+        } catch (\PDOException $ex) {
             return $ex->getCode()." ".$ex->getMessage();
         }
     }

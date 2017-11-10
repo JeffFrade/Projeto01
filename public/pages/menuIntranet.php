@@ -1,4 +1,7 @@
 <?php
+    //Verificação de Login:
+    require_once 'logado.php';
+
     //Pegando a Página Atual e Adicionando a Extensão .php:
     $pagina = basename($_SERVER['PHP_SELF'],'.php').'.php';
 ?>

@@ -47,7 +47,7 @@ require_once 'topo.php';
 
                             <div class="form-group">
                                 <label for="txtCep">* CEP:</label>
-                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP" maxlength="8" v-model="cep" value="01514000">
+                                <input type="text" id="txtCep" name="txtCep" class="form-control" placeholder="CEP" maxlength="8" v-model="cep">
                             </div>
 
                             <div class="form-group">
