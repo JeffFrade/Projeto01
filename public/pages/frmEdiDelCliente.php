@@ -1,4 +1,4 @@
-<form id="frmEdiDelCliente" name="frmEdiDelCliente" method="post" action="">
+<form id="frmEdiDelCliente" name="frmEdiDelCliente" method="post" action="<?= $pagina.'?cpf='.$cliente->getCpf(); ?>">
     <div class="alert alert-warning"><strong>Aviso:</strong> * = Preenchimento Obrigatório</div>
 
     <div class="form-group">
@@ -86,6 +86,24 @@
     <div>
         <br/>
         <?php
+            if (isset($_POST['btnEditar'])) {
+                $cliente->setNome($_POST['txtNome']);
+                $cliente->setEmail($_POST['txtEmail']);
+                $cliente->setDataNasc($_POST['txtDataNasc']);
+                $cliente->setCpf($_POST['txtCpf']);
+                $cliente->setTelefone($_POST['txtTelefone']);
+                $cliente->setCelular($_POST['txtCelular']);
+                $cliente->setCep($_POST['txtCep']);
+                $cliente->setEndereco($_POST['txtEndereco']);
+                $cliente->setBairro($_POST['txtBairro']);
+                $cliente->setCidade($_POST['txtCidade']);
+                $cliente->setEstado($_POST['txtEstado']);
+                $cliente->setNumero($_POST['txtNumero']);
+                $cliente->setComplemento($_POST['txtComp']);
+
+                echo $sCliente->updateCliente();
+            }
+
             if (isset($_POST['btnDeletar'])) {
                 $cliente->setCpf($_POST['txtCpf']);
 
