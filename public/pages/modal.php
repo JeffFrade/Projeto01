@@ -25,7 +25,7 @@
                     </div>
 
                     <div class="form-group">
-                        Não Possui Cadastro? <a href="<?= ($pagina == 'index.php'?"pages/cadastroCliente.php":"cadastroCliente.php") //$pagina vem do arquivo menu.php ?>">Clique Aqui</a><br/>
+                        Não Possui Cadastro? <a href="<?= ($pagina == 'index.php'?"pages/cadastrarCliente.php":"cadastrarCliente.php") //$pagina vem do arquivo menu.php ?>">Clique Aqui</a><br/>
                     </div>
 
                     <div class="form-group">

@@ -40,7 +40,7 @@
                             </li>
                             <li class="<?= ($pagina == 'contato.php'?"active":"")?>"><a href="<?= ($pagina == 'index.php'?"pages/contato.php":"contato.php")?>"><i class="fa fa-fw fa-users"></i> Contato</a></li>
                             <?php if(!isset($_SESSION['nome']) || empty($_SESSION['nome'])): ?>
-                                <li class="<?= ($pagina == 'cadastroCliente.php' || $pagina == 'esqueciSenha.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                                <li class="<?= ($pagina == 'cadastrarCliente.php' || $pagina == 'esqueciSenha.php'?"active":"")?>"><a role="button" data-toggle="modal" data-target="#login"><i class="fa fa-fw fa-user"></i> Login</a></li>
                             <?php else: ?>
                                 <li class="dropdown <?= ($pagina == 'ediDelCliente.php'?"active":"")?>">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <?= $_SESSION['nome'] ?> <span class="caret"></span></a>

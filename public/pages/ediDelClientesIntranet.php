@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">
-                        Edição/Exclusão do Produto
+                        Edição/Exclusão do Cliente
                     </h1>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-tags fa-fw"></i> Dados do Produto</h3>
+                            <h3 class="panel-title"><i class="fa fa-user fa-fw"></i> Dados do Cliente</h3>
                         </div>
                         <div class="panel-body">
                             <?php
@@ -46,6 +46,7 @@
 <?php
 require_once 'scripts.php';
 ?>
+
 </body>
 </html>
 

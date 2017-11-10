@@ -59,6 +59,14 @@ class ServiceCliente implements ServiceClienteInterface
                 return false;
             }
 
+            //Verificando se o E-mail já Foi Cadastrado:
+            if (Sql::countWhere($this->db, 'email', 'cliente', 'email', $this->cliente->getEmail()) > 0) {
+                //Caso Seja:
+                $classes = ['alert alert-danger'];
+
+                return Tags::alertDismissible($classes, 'E-mail Já Cadastrado');
+            }
+
             //Criando o Md5 da Senha:
             $this->cliente->setMd5Senha($this->cliente->getSenha());
 
@@ -240,6 +248,56 @@ class ServiceCliente implements ServiceClienteInterface
     }
 
     ##### UPDATE #####
+    //Método de Edição de Dados do Cliente:
+    public function updateCliente()
+    {
+
+    }
+
+    //Método de Alterar Senha do Cliente:
+    public function updateSenha()
+    {
+
+    }
 
     ##### DELETE #####
+    //Méotdo de Exclusão do Cliente:
+    public function deleteCliente()
+    {
+        //Tratamento de Erros:
+        try {
+            //Query SQL:
+            $sql = "DELETE FROM cliente WHERE cpf = :cpf";
+
+            //Criando o Statment:
+            $stmt = $this->db->prepare($sql);
+
+            //Adicionando os Parâmetros:
+            $stmt->bindValue(':cpf', $this->cliente->getCpf());
+
+            //Verificando se o Statment Foi Executado:
+            if ($stmt->execute()) {
+                //Caso Seja:
+                $classes = ['alert alert-success'];
+
+                //Exibe a Mensagem:
+                echo Tags::alertDismissible($classes, "Cliente Excluído com Sucesso!");
+
+                //Retorno:
+                return true;
+            }
+
+            //Caso Não Seja:
+            $classes = ['alert alert-danger'];
+
+            //Exibe a Mensagem:
+            echo Tags::alertDismissible($classes, "Erro ao Excluir Dados, Tente Novamente Mais Tarde");
+
+            //Retorno:
+            return false;
+        } catch (\PDOException $ex) {
+            //Caso Haja Erro:
+            return $ex->getCode()." ".$ex->getMessage();
+        }
+    }
 }
