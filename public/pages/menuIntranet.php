@@ -60,8 +60,8 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="#"><i class="fa fa-fw fa-tag"></i> Categorias</a>
+            <li <?= ($pagina == 'categorias.php'?'class="active"':'')?>>
+                <a href="categorias.php"><i class="fa fa-fw fa-tag"></i> Categorias</a>
             </li>
             <li <?= ($pagina == 'consultarClientes.php' || $pagina == 'ediDelClientesIntranet.php' ?'class="active"':'')?>>
                 <a href="consultarClientes.php"><i class="fa fa-fw fa-users"></i> Clientes</a>
